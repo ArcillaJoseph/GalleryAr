@@ -1,92 +1,125 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* General styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial;
-    color: #333;
-    background: linear-gradient(to right, rgb(7, 6, 6), rgb(41, 1, 1));
-    background-size: 90px 104px;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif; /* Clean, modern font */
+  background-color: #eef2f3; /* Soft background color */
 }
 
-/* Banner styling */
+/* Banner styles */
 .banner {
-        width: 100%;
-        height: 50px;
-        text-align: center;
-        font-family: cursive;
-        background: linear-gradient(to right, gold, silver); /* Gradient background */
-        background-clip: text; /* Standard property for clipping to text (WebKit only) */
-        -webkit-background-clip: text; /* WebKit-specific property */
-        -webkit-text-fill-color: transparent;  
+  text-align: center;
+  background: linear-gradient(135deg, #4a90e2, #6cbfef); /* Calming gradient */
+  padding: 50px 20px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 10px; /* Rounded corners */
+  margin-bottom: 30px; /* Space below banner */
 }
+
 .banner-container {
-    position: relative; 
+  max-width: 800px;
+  margin: auto;
 }
 
-.banner::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0; 
-    width: 100%;
-    height: 50px;
-    background: linear-gradient(to right, blue, violet);
-    z-index: -1;
+/* Description styles */
+.description {
+  text-align: justify;
+  background-color: #ffffff; /* Clean background for readability */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  line-height: 1.6; /* Improved line height for readability */
 }
 
-.banner2 {
-    width: 100%;
-    height: 28px;
-    text-align: center;
-    font-family: "Times New Roman", Times, serif;
-    background: repeating-linear-gradient(to right, grey, grey 0.5px, silver 1px, grey 0.5px);
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
 }
 
-/* Main content styling */
-.main-content {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    max-width: 1200px;
-    margin: 20px auto;
-    border-radius: 10px;
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Gallery styling */
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+.close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-.gallery-item {
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.close:hover,
+.close:focus {
+  color: #ff4081; /* Accent color */
 }
 
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
+/* Navigation buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 10px 15px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.gallery-item:hover img { 
-    transform: scale(1.1); 
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1); /* Slight scale on hover */
 }
 
-a {
-    text-decoration: none;
+.caption-container {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 16px;
+  color: #f1f1f1;
+  border-radius: 10px;
 }
-.gallery-item.clicked img {
-    transform: scale(1.5); /* Adjust scale as needed */
-    cursor: zoom-out; /* Change cursor on zoom */ 
+
+/* Image columns */
+.column {
+  float: left;
+  width: 20%;
+  padding: 15px; /* Added padding for spacing */
+}
+
+.demo {
+  opacity: 0.8;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.demo:hover {
+  opacity: 1;
+  transform: scale(1.05); /* Slight scale on hover */
+}
+
+.hover-shadow {
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.19);
+  transform: translateY(-5px); /* Lift effect on hover */
 }
